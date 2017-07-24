@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html no-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1，user-scalable=no,minimal-ul">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <style type="text/css">
+    html{
+    	width: 100%;
+    	height: 100%;
+    	overflow-x: hidden;
+    }
+      body{
+      	/*background-color: #e9dfc7;*/
+      	text-align: left;
+      	overflow: hidden;
+      	width: 100%;
+      }
+      .container{
+      	border-bottom: 1px solid #999;
+      	margin: 0 0 10px 0;
+
+      }
+      .m-read-content{
+      	padding: 15px;
+      	/*font-size: 14px;*/
+      	line-height: 31px;
+      	/*background-color: #e9dfc7;*/
+
+      }
+      .m-read-content h4{
+      	font-size: 20px;
+      	color: #736357;
+      	border-bottom: 1px solid #736357;
+      	margin: 0 0 15px 0;
+      }
+     .m-read-content p{
+     	text-indent: 30px;
+     	margin: 0.1em 0;
+     	letter-spacing: 0px;
+     	word-wrap: break-word;
+     	word-break: break-all;
+     	line-height: 24px;
+
+     }
+     .u-tab li{
+     	float: left;
+     	width: 49%;
+     	font-size: 14px;
+     	color: #ff0000;
+     	text-align: center;
+     	border-right: 1px solid #999;
+     	line-height: 21px;
+     	margin: 0 0 10px 0;
+     	display: block;
+     	opacity: 0.9；
+     }
+     .u-tab li:nth-child(2){
+     	border-right: none;
+     }
+     .m-button-bar{
+     	overflow: auto;
+     }
+     .top-nav{
+     	position: fixed;
+     	top: 0px;
+     	height: 50px;
+     	width: 100%;
+     	z-index: 100;
+     	background-color: #000;
+     }
+
+     .icon-back{
+     	position: absolute;
+     	top: 15px;
+     	left: 13px;
+     	background-image: url(data/icon.jpg);
+     	z-index: 110;
+     	width: 23px;
+     	height:23px;
+     	background-size: contain;
+     	display: block;
+     }
+    .nav-title{
+     	color: #fff;
+     	height: 50px;
+     	line-height: 50px;
+     	position:absolute;
+     	left: 50px;
+     }
+      .bottom-nav{
+     	position: fixed;
+     	bottom: 0px;
+     	height: 72px;
+     	width: 100%;
+     	z-index: 100;
+     	background-color: #000;
+     /*	opacity: 0.9;*/
+     }
+     .nav-menu,.nav-font,.nav-night{
+     	width: 33%;
+     	color: #fff;
+        float: left;
+     	height: 72px;
+     	text-align: center;
+     	line-height: 104px;
+     	font-size: 12px;
+     }
+     .nav-menu{
+     	background: 53% 15px url(data/menu.jpg) no-repeat;
+     }
+     .nav-font{
+     	background: 53% 15px url(data/font.jpg) no-repeat;
+     }
+     .nav-night{
+     	background: 53% 15px url(data/night.jpg) no-repeat;
+     }
+     .font-color{
+     	position: fixed;
+     	bottom: 72px;
+     	height: 100px;
+     	width: 100%;
+     	background-color: #000;
+     	/*opacity: 0.9;*/
+
+     }
+     .font-size-button{
+     	border: 1px solid #fff;
+     	background-color: #000;
+     	/*opacity: 0.9;*/
+     	width: 23%;
+     	height: 25px;
+     	line-height: 20px;
+     	text-align: center;
+     	color: #fff;
+     	font-size: 12px;
+     	margin: 10px 5px 0 5px;
+     	border-radius: 28px;
+
+     }
+     .child-mod-title{
+     	color: #fff;
+     	font-size: 12px;
+     	margin: 10px 0px 10px 0px;
+     	height: 20px;
+     	text-align: center;
+     	display: inline-block;
+     	width: 14%;
+     	line-height: 20px;
+     	vertical-align: middle;
+
+     }
+     div.child-mod{
+     	margin: 0 auto;
+     	vertical-align: middle;
+     	overflow: auto;
+     	height: 50%;
+     	z-index: 101;
+
+     }
+     .bk-container{
+     	display: inline-block;
+     	margin: 10px 5px 0 5px;
+     	width: 80%;
+     	float: right;
+     	height: 30px
+     	background-color: none;
+     }
+     .color{
+     	width: 10%;
+     	height: 33px;
+     	border-radius: 50%;
+     	margin-left: 10px;
+     	float: left;
+     }
+     .colora{
+     	background-color: #fff;
+     	color: #000;
+     }
+     .colorb{
+     	background-color: #E9DFC7;
+     }
+     .colorc{
+     	background-color: #a0d9a4;
+     }
+     .colord{
+     	background-color: #000;
+     	border: 1px solid #fff;
+     	color:#fff;
+
+     }
+     .article-action-mid{
+     	position: fixed;
+     	z-index: 120;
+     	width: 100%;
+     	height: 40%;
+     	top: 30%;
+
+     }
+     .slide-left{
+     	width: 100%;
+     	height: 100%;
+     	background-color: #E9DFC7;
+     	z-index: 110;
+	    background-color:#E9DFC7;
+	    position:fixed;
+	    display: block;
+	    animation:mymove 1s;
+	    animation-iteration-count:1;
+	    animation-fill-mode:forwards;
+
+	    /* Safari 和 Chrome */
+	    -webkit-animation:mymove 1s;
+	    -webkit-animation-iteration-count:1;
+	    -webkit-animation-fill-mode:forwards;
+     }
+     @keyframes mymove
+     {
+     	from {left:-100%;}
+     	to {left:0px;}
+     }
+
+     @-webkit-keyframes mymove /* Safari 和 Chrome */
+     {
+     	from {left:-100%;}
+     	to {left:0px;}
+     }
+     .menu-title{
+     	text-indent: 58px;
+     	height: 40px;
+     	line-height: 40px;
+     	width: 30%;
+     	background-color: #EeeeC7;
+     	background:15px 10px url(data/right.png) no-repeat; 
+     	background-size: 20px 20px;
+     }
+     .menu-content{
+     	width: 100%;
+     	height: 100%;
+     	overflow-x: hidden;
+     }
+     .menu-list{
+     	width: 100%;
+     	height: auto;
+     }
+     .menu-list li{
+     	text-indent: 3px;
+     	margin: 0 15px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+        color: #777;
+        border-bottom: 1px solid #999;
+     }
+    </style>
+</head>
+<body>
+   <div id="root" class="container">
+   <div id="slide-left" style="display:none;">
+       <h3 class="menu-title" id="menu-title">目录</h3>
+       <div class="menu-content">
+       <ul class="menu-list" id="menu-list">
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+          <li>第一章:重生</li>
+       </ul>
+       </div>
+   </div>
+   <div class="m-article-action">
+     <div class="article-action-mid" id="action_mid"></div>
+   </div>
+   <div id="top-nav" class="top-nav" style="display:none">
+      <div class="icon-back"></div>
+      <div class="nav-title">返回书架</div>
+   </div>
+   <div id="fition-chapter-title"></div>
+   <div id="fiction-container" class="m-read-content"></div>   <!-- 内容 -->
+   <div class="m-button-bar">
+      <ul class="u-tab">
+          <li id="prev-button">上一页</li>
+          <li id="next-button">下一页</li>
+      </ul>
+   </div>
+   <div class="font-color" id="font-color" style="display:none">
+      <div class="child-mod">
+        <span class="child-mod-title">字号</span>
+        <button id="large-font" class="font-size-button">大</button>
+        <button id="small-font" class="font-size-button">小</button>
+        </div>
+      <div class="child-mod">
+         <span class="child-mod-title">背景</span>
+         <div class="bk-container">
+           <div class="colora color"></div>
+           <div class="colorb color"></div>
+           <div class="colorc color"></div>
+           <div class="colord color"></div>
+         </div>
+       </div>
+
+   </div>
+   <div id="bottom-nav" class="bottom-nav" style="display:none">
+      <div class="nav-menu" id="nav-menu">目录</div>
+      <div class="nav-font" id="nav-font">字体</div>
+      <div class="nav-night" id="nav-night">夜间</div>
+    </div>
+   </div>
+   <script src="lib/zepto.min.js"></script>
+   <script>
+      window.jQuery = $;
+   </script>
+   <script src="js/jquery.base64.js"></script>
+   <script src="js/jquery.jsonp.js"></script>
+   <script>
+   //本地存储
+      (function(){//闭包
+      	var Util=(function(){      //封装一个类
+      		var prefix='html5_reader_';   //前缀，防止被其它key覆盖
+      		var StorageGetter=function(key){    //声明方法
+      			return localStorage.getItem(prefix+key);
+      		}
+      		var StorageSettter=function(key,val){   //声明方法
+      			return localStorage.setItem(prefix+key,val);
+      		}
+      		var getBSONP=function(url,callback){
+      			return $.jsonp({
+      			url:url,
+      			cache:true,
+      			callback:'duokan_fiction_chapter',
+      			success:function(result){
+      				var data=$.base64.decode(result);
+      				var json=decodeURIComponent(escape(data));
+      				callback(json);
+      			}
+      		  })
+      		}
+
+      		return {
+      			 getBSONP:getBSONP,
+      			StorageGetter:StorageGetter,
+      			StorageSettter:StorageSettter
+      		}
+      	})();
+      	var Dom={
+      		top_nav:$('#top-nav'),
+      		bottom_nav:$('#bottom-nav'),
+      		font_nav:$('#font-color'),
+      		colora:$('.colora'),
+      		colorb:$('.colorb'),
+      		colorc:$('.colorc'),
+      		colord:$('.colord'),
+      		next:$('.m-button-bar')
+      	}
+      	var Win=$(window);
+      	var DOC=$(document);
+      	var Body=$('body');
+      	var readerModel;
+      	var readerUI;
+      	var RootContainer=$('#fiction-container');
+      	var initFontSize=Util.StorageGetter('font_size');
+      	initFontSize=parseInt(initFontSize);
+      	if(!initFontSize){
+      		initFontSize=12;
+      	}
+      	RootContainer.css('font-size',initFontSize);
+      	function main(){
+      		//项目的入口函数
+      		
+      		readerModel=ReaderModel();
+      		readerUI=ReaderBaseFrame(RootContainer);
+      		readerModel.init(function(data){
+      			readerUI(data);
+      		});
+            EventHandle();
+      	}
+      	function ReaderModel(){
+      		//实现和阅读器相关的数据交互的方法
+      		var Chapter_id;
+      		var Chapter_Total;
+      		var init=function(UIcallback){
+      			getFictionInfo(function(){
+      				getCurChapterContent(Chapter_id,function(data){
+      					UIcallback &&　UIcallback(data);
+      				});
+      			})
+      		}
+      		var getFictionInfo=function(callback){       //定义接口
+      			$.get('data/chapter.json',function(data){  //
+      				//信息回调
+      				 Chapter_id=Util.StorageGetter('last_chapter_id');
+      				 if(Chapter_id != null){
+      				 	Chapter_id=data.chapters[Chapter_id].chapter_id;
+      				 }else{
+      				 	Chapter_id=data.chapters[1].chapter_id;
+      				 }
+      				Chapter_Total=data.chapters.length;
+      				callback && callback();
+      			},'json');  //$.get('请求地址'，回调函数,'服务器返回内容格式')连接接口文件
+      		}
+      		var getCurChapterContent=function(chapter_id,callback){  //获取章节内容
+      		 $.get('data/data'+chapter_id+'.json',function(data){
+      		 	 if(data.result == 0){
+      		 	 	var url =data.jsonp;
+      		 	 	Util.getBSONP(url,function(data){
+      		 	 		callback && callback(data);
+
+      		 	 	});
+      		 	 }
+
+      		 },'json')
+
+      	    }
+      	    var precChapter=function(UIcallback){   //上一页接口
+      	    	Chapter_id=parseInt(Chapter_id,10);
+      	    	if(Chapter_id==0){
+      	    		return;
+      	    	}
+      	    	Chapter_id-=1;
+      	    	getCurChapterContent(Chapter_id,UIcallback);
+      	    	 Util.StorageSettter('last_chapter_id',Chapter_id);
+
+      	    }
+      	    var nextChapter=function(UIcallback){   //下一页接口
+      	    	Chapter_id=parseInt(Chapter_id,10);
+      	    	if(Chapter_id==Chapter_Total){
+      	    		return;
+      	    	}
+      	    	Chapter_id+=1;
+      	    	getCurChapterContent(Chapter_id,UIcallback);
+                 Util.StorageSettter('last_chapter_id',Chapter_id);
+
+      	    }
+      	    return{
+      	    	init:init,
+      	    	precChapter:precChapter,
+      	    	nextChapter:nextChapter
+      	    }
+      	}
+
+      	function ReaderBaseFrame(container){      //渲染基本UI结构
+      		function parseChapterData(jsonData){
+      		var jsonObj=JSON.parse(jsonData);
+
+      		var html='<h4>'+jsonObj.t+'</h4>';
+      		// var title='<li>'+jsonObj.t+'</li>';
+      		for(var j=0;j<jsonObj.p.length;j++){
+      			html+='<p>'+jsonObj.p[j]+'</p>';
+      		}
+      		// $('#menu-list').html(title);
+      		return html;
+      		}
+      		return function(data){
+      			container.html(parseChapterData(data));
+      	  }
+      	  
+      	}
+      	function EventHandle(){
+      		//交互事件绑定
+      		$('#action_mid').click(function(){
+      			if(Dom.top_nav.css('display')=='none'){
+      				Dom.bottom_nav.show();
+      				Dom.top_nav.show();
+      			}else{
+      				Dom.bottom_nav.hide();
+      				Dom.top_nav.hide();
+      				Dom.font_nav.hide();
+      			}
+
+      		});
+      		//点击页面中间，控制底部和顶部的导航的出现和消失
+      		Win.scroll(function(){
+      			Dom.bottom_nav.hide();
+      			Dom.top_nav.hide();
+      			Dom.font_nav.hide();
+      		});
+      		//滑动页面时，导航消失
+      		$('#nav-font').click(function(){
+      			if(Dom.font_nav.css('display')=='none'){
+      				Dom.font_nav.show();
+      			}else{
+      				Dom.font_nav.hide();
+      			}
+
+      		});
+      		$('#prev-button').click(function(){
+      			readerModel.precChapter(function(data){
+      				readerUI(data);
+      			});
+
+      		})
+      		$('#next-button').click(function(){
+      			readerModel.nextChapter(function(data){
+      				readerUI(data);
+      			});
+      		})
+      		//字体面板控制
+      		Dom.colora.click(function(){
+      			RootContainer.addClass('colora');
+      			Dom.next.addClass('colora');
+      			Dom.next.removeClass('colorb');
+      			Dom.next.removeClass('colorc');
+      			Dom.next.removeClass('colord');
+      			RootContainer.removeClass('colorb');
+      			RootContainer.removeClass('colorc');
+      			RootContainer.removeClass('colord');
+      			$('.m-read-content p').css('color','#000');
+      			$('.u-tab li').css('color','#000');
+      			Util.StorageSettter('background_color','colora');
+      		});
+      		Dom.colorb.click(function(){
+      			RootContainer.addClass('colorb');
+      			Dom.next.addClass('colorb');
+      			Dom.next.removeClass('colora');
+      			Dom.next.removeClass('colorc');
+      			Dom.next.removeClass('colord');
+      			RootContainer.removeClass('colora');
+      			RootContainer.removeClass('colorc');
+      			RootContainer.removeClass('colord');
+      			$('.m-read-content p').css('color','#000');
+      			$('.u-tab li').css('color','#000');
+      			Util.StorageSettter('background_color','colorb');
+
+      		});
+      		Dom.colorc.click(function(){
+      			RootContainer.addClass('colorc');
+      			Dom.next.addClass('colorc');
+      			Dom.next.removeClass('colorb');
+      			Dom.next.removeClass('colora');
+      			Dom.next.removeClass('colord');
+      			RootContainer.removeClass('colorb');
+      			RootContainer.removeClass('colora');
+      			RootContainer.removeClass('colord');
+      			$('.m-read-content p').css('color','#000');
+      			$('.u-tab li').css('color','#000');
+      			Util.StorageSettter('background_color','colorc');
+      		});
+      		Dom.colord.click(function(){
+      			RootContainer.addClass('colord');
+      			Dom.next.addClass('colord');
+      			Dom.next.removeClass('colorb');
+      			Dom.next.removeClass('colora');
+      			Dom.next.removeClass('colorc');
+      			RootContainer.removeClass('colorb');
+      			RootContainer.removeClass('colorc');
+      			RootContainer.removeClass('colora');
+      			$('.m-read-content p').css('color','#fff');
+      			$('.u-tab li').css('color','#fff');
+      			Util.StorageSettter('background_color','colord');
+
+      		});
+           //背景颜色
+           $('#large-font').click(function(){
+           	   if(initFontSize>20){
+           	   	  return;
+           	   }
+           	   initFontSize+=1;
+           	   RootContainer.css('font-size',initFontSize);
+           	   Util.StorageSettter('font_size',initFontSize);
+           });
+           $('#small-font').click(function(){
+           	  if(initFontSize<10){
+           	   	  return;
+           	   }
+           	   initFontSize-=1;
+           	   RootContainer.css('font-size',initFontSize);
+           	   Util.StorageSettter('font_size',initFontSize);
+           });
+           //字体大小
+           var n=0;
+      		$('#nav-night').click(function(){
+      			if(n==0){
+      				//触发背景事件
+      			    RootContainer.addClass('colord');
+      			    Dom.next.addClass('colord');
+      			    Dom.next.removeClass('colorb');
+      			    Dom.next.removeClass('colora');
+      			    Dom.next.removeClass('colorc');
+      			    RootContainer.removeClass('colorb');
+      			    RootContainer.removeClass('colorc');
+      			    RootContainer.removeClass('colora');
+      			    $('.m-read-content p').css('color','#fff');
+      			    $('.u-tab li').css('color','#fff');
+      			    n=1;
+
+      			}else{
+      				n=0;
+      				RootContainer.addClass('colorb');
+      			    Dom.next.addClass('colorc');
+      			    Dom.next.removeClass('colorb');
+      			    Dom.next.removeClass('colora');
+      			    Dom.next.removeClass('colord');
+      			    RootContainer.removeClass('colorb');
+      			    RootContainer.removeClass('colora');
+      			    RootContainer.removeClass('colord');
+      			    $('.m-read-content p').css('color','#000');
+      			    $('.u-tab li').css('color','#000');
+      			    Util.StorageSettter('background_color','colorc');
+
+      			}
+
+      		});
+      		//夜间功能
+      			$('#nav-menu').click(function(){
+      			 $("#slide-left").css('display','block');
+                 $("#slide-left").addClass('slide-left');
+      		   });
+      			$('#menu-title').click(function(){
+      				$("#slide-left").removeClass('slide-left');
+      				$("#slide-left").css('display','none');
+      			});
+      		//进入和离开目录
+      		$('#menu-list li').click(function(){
+      			$("#slide-left").removeClass('slide-left');
+      			$("#slide-left").css('display','none');
+      		});
+      		//目录
+      	}
+      	main();
+
+      })();
+   </script>
+</body>
+</html>
